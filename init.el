@@ -90,3 +90,17 @@
 
 ;; tune rescale so that Chinese character width = 2 * English character width
 (setq face-font-rescale-alist '(("Source Code Pro" . 1.0) ("PingFang SC" . 1.25)))
+
+
+(setq org-todo-keywords
+      '((sequence "TODO" "WATCH" "DOING" "|" "DONE") ;normal own tasks
+        (sequence "ASSIGNED" "|" "DONE") ;normal assigned tasks
+        (sequence "REPORTED" "BUG" "KNOWNCAUSE" "|" "FIXED") ;bugs
+        (sequence "|" "CANCELED"))) 
+
+(require 'org)
+;define shiftcontrol keys
+(define-key org-mode-map (kbd "C-S-b") 'org-shiftcontrolleft)
+(define-key org-mode-map (kbd "C-S-f") 'org-shiftcontrolright)
+(define-key org-mode-map (kbd "C-S-p") 'org-shiftcontrolup)
+(define-key org-mode-map (kbd "C-S-n") 'org-shiftcontroldown)
